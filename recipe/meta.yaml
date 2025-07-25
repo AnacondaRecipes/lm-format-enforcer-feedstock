@@ -1,5 +1,5 @@
 {% set name = "lm-format-enforcer" %}
-{% set version = "0.10.9" %}
+{% set version = "0.10.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,23 +7,22 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lm_format_enforcer-{{ version }}.tar.gz
-  sha256: 3e0bfeaf9fac9f69c8947da554db9a19a76d0be6e85075055f2c70d0aca420da
+  sha256: 8ab371924e166a1df68f243aca73a8a647bea5909f37edd6a53a694e7e7c3274
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python
-    - poetry-core
+    - poetry-core >=1.1.0
     - pip
-    - wheel
   run:
     - python
-    - pydantic
-    - interegular
+    - pydantic >=1.10.8
+    - interegular >=0.3.2
     - packaging
     - pyyaml
 
@@ -34,7 +33,7 @@ test:
     - pip check
   requires:
     - pip
-    - numpy
+    - numpy >=1.21.0
     - python
 
 about:
