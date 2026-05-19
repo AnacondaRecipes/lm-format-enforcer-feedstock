@@ -48,6 +48,7 @@ about:
     generate at every timestep, thus ensuring that the output format is
     respected, while minimizing the limitations on the language model.
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   doc_url: https://github.com/noamgat/lm-format-enforcer
   dev_url: https://github.com/noamgat/lm-format-enforcer
